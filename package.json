@@ -15,7 +15,8 @@
     "coveralls": "jest --coverage",
     "lint": "eslint --ext .ts src/",
     "prettier": "prettier -c --write \"src/**/*\"",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "commit": "git-cz"
   },
   "license": "MIT",
   "devDependencies": {
@@ -28,7 +29,9 @@
     "@types/jest": "^29.2.4",
     "@typescript-eslint/eslint-plugin": "^5.46.0",
     "@typescript-eslint/parser": "^5.46.0",
+    "commitizen": "^4.3.0",
     "coveralls": "^3.1.1",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.29.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
@@ -49,5 +52,11 @@
       "npm run lint",
       "prettier --write"
     ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
   }
+
 }
