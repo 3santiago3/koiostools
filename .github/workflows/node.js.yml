@@ -99,7 +99,7 @@ jobs:
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh release upload v${{steps.version.outputs.prop}} ./lib/index.umd.js
+        run: gh release create v${{steps.version.outputs.prop}} './lib/index.umd.js#My display label'
 
       # 发布NPM包
       - name: 发布NPM包
