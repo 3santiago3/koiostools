@@ -40,6 +40,8 @@ jobs:
 
   # publish-npm任务
   publish-npm:
+    permissions: write-all
+
     # 在ubuntu最新版本的虚拟机执行
     runs-on: ubuntu-latest
     # 设置变量
