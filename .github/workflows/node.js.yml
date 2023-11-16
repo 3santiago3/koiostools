@@ -93,10 +93,13 @@ jobs:
       #   env:
       #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      # 上面 softprops/action-gh-release@v1 老是报 403，就改成下面的方式了
+      # https://stackoverflow.com/questions/76362343/creating-a-release-using-github-action-fails-with-http-403
+      # 创建Release
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh release create v${{steps.version.outputs.prop}} -F ./lib/index.umd.js
+        run: gh release create v${{steps.version.outputs.prop}} -F ./lib/index.umd.js --upload
 
       # 发布NPM包
       - name: 发布NPM包
