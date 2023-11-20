@@ -16,10 +16,14 @@
     "lint": "eslint --ext .ts src/",
     "prettier": "prettier -c --write \"src/**/*\"",
     "prepare": "husky install",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "changeset": "changeset",
+    "version": "changeset version && yarn install",
+    "publish": "changeset publish"
   },
   "license": "MIT",
   "devDependencies": {
+    "@changesets/cli": "^2.26.2",
     "@commitlint/cli": "^17.3.0",
     "@commitlint/config-conventional": "^17.3.0",
     "@rollup/plugin-babel": "^6.0.3",
@@ -58,5 +62,4 @@
       "path": "cz-conventional-changelog"
     }
   }
-
 }
