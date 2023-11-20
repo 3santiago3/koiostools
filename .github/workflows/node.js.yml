@@ -95,38 +95,21 @@ jobs:
 
       # 上面 softprops/action-gh-release@v1 老是报 403，就改成下面的方式了
       # https://stackoverflow.com/questions/76362343/creating-a-release-using-github-action-fails-with-http-403
-      # # 创建Release
-      # - name: Release
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #   run: gh release create v${{steps.version.outputs.prop}} './lib/index.umd.js#index.umd.js'
-
-      # 这一步是最重要的。使用changesets/action自动创建 PR 或者发布
-      - name: Create Release Pull Request or Publish
-        id: changesets
-        uses: changesets/action@v1
-        with:
-          # 执行更新版本和发布的命令
-          version: yarn run version
-          publish: yarn run publish
-          commit: '[ci] release'
-          title: '[ci] release'
+      # 创建Release
+      - name: Release
         env:
-          # 这里需要几个 Token 变量
-          # GITHUB_TOKEN 是 CI 里自带的默认 token
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # NPM_TOKEN 需要稍后在 npm 网站生成。
-          NPM_TOKEN: ${{secrets.NPM_ACCESS_TOKEN}}
+        run: gh release create v${{steps.version.outputs.prop}} './lib/index.umd.js#index.umd.js'
 
-      # # 发布NPM包
-      # - name: 发布NPM包
-      #   # 执行发布代码
-      #   run: |
-      #     npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN
-      #     npm publish
-      #   env:
-      #     # 配置 npm access token 环境变量
-      #     NPM_TOKEN: ${{secrets.NPM_ACCESS_TOKEN}}
+      # 发布NPM包
+      - name: 发布NPM包
+        # 执行发布代码
+        run: |
+          npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN
+          npm publish
+        env:
+          # 配置 npm access token 环境变量
+          NPM_TOKEN: ${{secrets.NPM_ACCESS_TOKEN}}
 
       # 刷新缓存
       - name: 刷新缓存
