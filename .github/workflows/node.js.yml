@@ -95,11 +95,11 @@ jobs:
 
       # 上面 softprops/action-gh-release@v1 老是报 403，就改成下面的方式了
       # https://stackoverflow.com/questions/76362343/creating-a-release-using-github-action-fails-with-http-403
-      # 创建Release
-      - name: Release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh release create v${{steps.version.outputs.prop}} './lib/index.umd.js#index.umd.js'
+      # # 创建Release
+      # - name: Release
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   run: gh release create v${{steps.version.outputs.prop}} './lib/index.umd.js#index.umd.js'
 
       # 这一步是最重要的。使用changesets/action自动创建 PR 或者发布
       - name: Create Release Pull Request or Publish
