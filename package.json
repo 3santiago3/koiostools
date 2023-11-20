@@ -17,7 +17,8 @@
     "prettier": "prettier -c --write \"src/**/*\"",
     "prepare": "husky install",
     "commit": "git-cz",
-    "release": "standard-version && git push --follow-tags origin main"
+    "release": "standard-version && git push --follow-tags origin main",
+    "typedoc": "typedoc"
   },
   "license": "MIT",
   "devDependencies": {
@@ -59,5 +60,8 @@
     "commitizen": {
       "path": "cz-conventional-changelog"
     }
+  },
+  "dependencies": {
+    "typedoc": "^0.25.3"
   }
 }
