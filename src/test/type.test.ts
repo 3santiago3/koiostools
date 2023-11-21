@@ -1,4 +1,4 @@
-import { isNumber } from '../type';
+import { isNumber, isObject } from '../type';
 
 describe('isNumber', () => {
   it('should return true if the value is a number', () => {
@@ -15,5 +15,35 @@ describe('isNumber', () => {
     expect(isNumber([])).toBe(false);
     expect(isNumber({})).toBe(false);
     expect(isNumber('3.14')).toBe(false);
+  });
+});
+
+describe('isObject', () => {
+  it('should return true for an empty object', () => {
+    expect(isObject({})).toBe(true);
+  });
+
+  it('should return true for a non-empty object', () => {
+    expect(isObject({ key: 'value' })).toBe(true);
+  });
+
+  it('should return false for a null value', () => {
+    expect(isObject(null)).toBe(false);
+  });
+
+  it('should return false for a undefined value', () => {
+    expect(isObject(undefined)).toBe(false);
+  });
+
+  it('should return false for a string', () => {
+    expect(isObject('')).toBe(false);
+  });
+
+  it('should return false for a number', () => {
+    expect(isObject(0)).toBe(false);
+  });
+
+  it('should return false for an array', () => {
+    expect(isObject([])).toBe(false);
   });
 });

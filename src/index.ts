@@ -1,1 +1,2 @@
-export { sum } from './sum';
+export * from './sum';
+export * from './type';

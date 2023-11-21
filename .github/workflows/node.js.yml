@@ -111,6 +111,15 @@ jobs:
           # 配置 npm access token 环境变量
           NPM_TOKEN: ${{secrets.NPM_ACCESS_TOKEN}}
 
+      - name: 构建文档
+        run: yarn typedoc
+
+      - name: 发布文档到 GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
+
       # 刷新缓存
       - name: 刷新缓存
         run: |
