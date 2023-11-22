@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/3santiago3/koiostools/compare/v1.1.4...v1.2.0) (2023-11-22)
+
+
+### Features
+
+* 添加字符串相关的工具函数 ([1e536c3](https://github.com/3santiago3/koiostools/commit/1e536c311b75c0a552ab58e3010df9c3a292f5ae))
+
 ### [1.1.4](https://github.com/3santiago3/koiostools/compare/v1.1.3...v1.1.4) (2023-11-22)
 
 ### [1.1.3](https://github.com/3santiago3/koiostools/compare/v1.1.2...v1.1.3) (2023-11-21)
