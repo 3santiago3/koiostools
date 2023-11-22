@@ -128,7 +128,7 @@ jobs:
       - name: 上传测试覆盖率
         uses: coverallsapp/github-action@master
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
 
       # 刷新缓存
       - name: 刷新缓存
