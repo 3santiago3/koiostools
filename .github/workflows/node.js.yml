@@ -122,7 +122,7 @@ jobs:
 
       # 测试
       - name: 测试
-        run: yarn test
+        run: yarn coveralls
 
       # 上传测试覆盖率
       - name: 上传测试覆盖率
