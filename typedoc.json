@@ -1,4 +1,7 @@
 {
   "entryPoints": ["src/index.ts"],
-  "out": "docs"
+  "out": "docs",
+  "entryPointStrategy": "expand",
+  "plugin": ["typedoc-theme-hierarchy"],
+  "theme": "hierarchy"
 }
