@@ -17,6 +17,7 @@ module.exports = {
         'revert', // 执行git revert打印的message
         'pref', // 提升性能的改动
         'merge', // 代码合并
+        'ci', // 持续集成
       ],
     ],
     'type-case': [0],

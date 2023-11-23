@@ -1,6 +1,7 @@
 {
   "name": "koiostools",
   "version": "1.3.2",
+  "description": "KoiosTools - 你的 JavaScript 开发利器，加速编程，提高效率！",
   "main": "lib/index.cjs.js",
   "module": "lib/index.esm.js",
   "jsnext:main": "lib/index.esm.js",
